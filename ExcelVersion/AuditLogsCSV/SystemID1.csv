@@ -1,0 +1,164 @@
+2004-01-01 15:24:01.000-08:00 - $$OsAdmin: Intel(R) ME Time Set
+2019-05-21 07:02:11.000-07:00 - Local: Provisioning Started
+2019-05-21 07:10:41.000-07:00 - admin: KVM Enabled
+2019-05-21 07:10:46.000-07:00 - admin: Opt-In Policy Change
+2019-05-21 07:10:50.000-07:00 - admin: KVM Session Started
+2019-05-21 07:12:27.000-07:00 - admin: KVM Session Ended
+2019-05-21 07:12:49.000-07:00 - admin: KVM Session Started
+2019-05-21 07:13:27.000-07:00 - admin: KVM Session Ended
+2019-05-22 23:35:07.000-07:00 - admin: KVM Session Started
+2019-05-22 23:35:22.000-07:00 - admin: KVM Session Ended
+2019-05-22 23:58:41.000-07:00 - admin: KVM Session Started
+2019-05-22 23:59:16.000-07:00 - admin: KVM Session Ended
+2019-05-23 22:53:14.000-07:00 - $$OsAdmin: ACL Access with Invalid Credentials
+2019-05-23 23:11:56.000-07:00 - admin: KVM Session Started
+2019-05-23 23:12:19.000-07:00 - admin: KVM Session Ended
+2019-05-24 03:30:15.000-07:00 - $$OsAdmin: ACL Access with Invalid Credentials
+2019-05-24 03:31:33.000-07:00 - admin: KVM Session Started
+2019-05-24 03:31:37.000-07:00 - admin: KVM Session Ended
+2019-05-24 03:32:05.000-07:00 - admin: Set Boot Options
+2019-05-24 03:32:05.000-07:00 - admin: Set Boot Options
+2019-05-24 03:32:05.000-07:00 - admin: Performed Reset
+2019-05-24 03:33:17.000-07:00 - admin: KVM Session Started
+2019-05-24 03:33:29.000-07:00 - admin: Set Boot Options
+2019-05-24 03:33:29.000-07:00 - admin: Set Boot Options
+2019-05-24 03:33:30.000-07:00 - admin: Performed Reset
+2019-05-24 03:33:54.000-07:00 - admin: KVM Session Ended
+2019-05-24 03:38:48.000-07:00 - admin: KVM Session Started
+2019-05-24 03:38:57.000-07:00 - admin: Set Boot Options
+2019-05-24 03:38:57.000-07:00 - admin: Set Boot Options
+2019-05-24 03:38:57.000-07:00 - admin: Performed Reset
+2019-05-24 03:39:27.000-07:00 - admin: KVM Session Ended
+2019-05-24 03:40:12.000-07:00 - admin: KVM Session Started
+2019-05-24 03:40:28.000-07:00 - admin: Set Boot Options
+2019-05-24 03:40:28.000-07:00 - admin: Set Boot Options
+2019-05-24 03:40:28.000-07:00 - admin: Performed Reset
+2019-05-24 03:40:58.000-07:00 - admin: KVM Session Ended
+2019-05-24 03:48:26.000-07:00 - admin: KVM Session Started
+2019-05-24 03:48:44.000-07:00 - admin: Set Boot Options
+2019-05-24 03:48:44.000-07:00 - admin: Set Boot Options
+2019-05-24 03:48:44.000-07:00 - admin: Performed Reset
+2019-05-24 03:50:18.000-07:00 - admin: Set Boot Options
+2019-05-24 03:50:19.000-07:00 - admin: Set Boot Options
+2019-05-24 03:50:19.000-07:00 - admin: Performed Reset
+2019-05-24 03:51:47.000-07:00 - admin: KVM Session Ended
+2019-05-24 03:55:52.000-07:00 - admin: Set Boot Options
+2019-05-24 03:55:52.000-07:00 - admin: Set Boot Options
+2019-05-24 03:55:53.000-07:00 - admin: Performed Power Up
+2019-05-24 03:56:46.000-07:00 - admin: KVM Session Started
+2019-05-24 03:57:08.000-07:00 - admin: KVM Session Ended
+2019-05-24 03:58:01.000-07:00 - admin: KVM Session Started
+2019-05-24 03:58:27.000-07:00 - admin: Set Boot Options
+2019-05-24 03:58:27.000-07:00 - admin: Set Boot Options
+2019-05-24 03:58:27.000-07:00 - admin: Performed Reset
+2019-05-24 04:00:09.000-07:00 - admin: KVM Session Ended
+2019-05-24 04:01:41.000-07:00 - admin: KVM Session Started
+2019-05-24 04:02:11.000-07:00 - admin: Set Boot Options
+2019-05-24 04:02:11.000-07:00 - admin: Set Boot Options
+2019-05-24 04:02:11.000-07:00 - admin: #6
+2019-05-24 04:03:56.000-07:00 - admin: KVM Session Ended
+2019-05-24 04:04:41.000-07:00 - admin: KVM Session Started
+2019-05-24 04:04:43.000-07:00 - admin: KVM Session Ended
+2019-05-24 04:04:45.000-07:00 - admin: KVM Session Started
+2019-05-24 04:04:58.000-07:00 - admin: KVM Session Ended
+2019-05-24 04:08:07.000-07:00 - admin: Set Boot Options
+2019-05-24 04:08:07.000-07:00 - admin: Set Boot Options
+2019-05-24 04:08:07.000-07:00 - admin: Performed Power Up
+2019-05-29 05:18:27.000-07:00 - $$OsAdmin: ACL Access with Invalid Credentials
+2019-05-29 05:19:41.000-07:00 - admin: KVM Session Started
+2019-05-29 05:19:53.000-07:00 - admin: Set Boot Options
+2019-05-29 05:19:53.000-07:00 - admin: Set Boot Options
+2019-05-29 05:19:54.000-07:00 - admin: Performed Reset
+2019-05-29 05:20:53.000-07:00 - admin: KVM Session Ended
+2019-05-29 05:25:17.000-07:00 - admin: KVM Session Started
+2019-05-29 05:25:24.000-07:00 - admin: KVM Session Ended
+2019-05-29 05:27:39.000-07:00 - admin: KVM Session Started
+2019-05-29 05:27:49.000-07:00 - admin: Set Boot Options
+2019-05-29 05:27:49.000-07:00 - admin: Set Boot Options
+2019-05-29 05:27:50.000-07:00 - admin: Performed Reset
+2019-05-29 05:28:20.000-07:00 - admin: KVM Session Ended
+2019-05-29 05:28:39.000-07:00 - admin: KVM Session Started
+2019-05-29 05:28:47.000-07:00 - admin: KVM Session Ended
+2019-05-29 05:29:57.000-07:00 - admin: KVM Session Started
+2019-05-29 05:29:59.000-07:00 - admin: KVM Session Ended
+2019-05-29 05:32:02.000-07:00 - admin: KVM Session Started
+2019-05-29 05:32:13.000-07:00 - admin: Set Boot Options
+2019-05-29 05:32:13.000-07:00 - admin: Set Boot Options
+2019-05-29 05:32:13.000-07:00 - admin: Performed Reset
+2019-05-29 05:41:28.000-07:00 - admin: KVM Session Ended
+2019-05-29 05:46:54.000-07:00 - admin: KVM Session Started
+2019-05-29 05:47:06.000-07:00 - admin: Set Boot Options
+2019-05-29 05:47:07.000-07:00 - admin: Set Boot Options
+2019-05-29 05:47:07.000-07:00 - admin: Performed Reset
+2019-05-29 05:47:37.000-07:00 - admin: KVM Session Ended
+2019-05-29 05:51:26.000-07:00 - admin: KVM Session Started
+2019-05-29 05:51:32.000-07:00 - admin: Set Boot Options
+2019-05-29 05:51:32.000-07:00 - admin: Set Boot Options
+2019-05-29 05:51:32.000-07:00 - admin: Performed Reset
+2019-05-29 05:56:10.000-07:00 - admin: KVM Session Started
+2019-05-29 05:56:18.000-07:00 - admin: Set Boot Options
+2019-05-29 05:56:18.000-07:00 - admin: Set Boot Options
+2019-05-29 05:56:18.000-07:00 - admin: Performed Reset
+2019-05-29 05:57:01.000-07:00 - admin: KVM Session Ended
+2019-05-29 06:03:03.000-07:00 - admin: KVM Session Started
+2019-05-29 06:03:12.000-07:00 - admin: Set Boot Options
+2019-05-29 06:03:12.000-07:00 - admin: Set Boot Options
+2019-05-29 06:03:12.000-07:00 - admin: Performed Reset
+2019-05-29 06:03:41.000-07:00 - admin: KVM Session Ended
+2019-05-29 06:06:58.000-07:00 - admin: KVM Session Started
+2019-05-29 06:07:03.000-07:00 - admin: Set Boot Options
+2019-05-29 06:07:03.000-07:00 - admin: Set Boot Options
+2019-05-29 06:07:04.000-07:00 - admin: Performed Reset
+2019-05-29 06:07:48.000-07:00 - admin: KVM Session Ended
+2019-05-29 06:07:49.000-07:00 - admin: KVM Session Started
+2019-05-29 06:08:32.000-07:00 - admin: KVM Session Ended
+2019-05-29 06:11:44.000-07:00 - admin: KVM Session Started
+2019-05-29 06:11:47.000-07:00 - admin: KVM Session Ended
+2019-05-29 06:19:32.000-07:00 - admin: KVM Session Started
+2019-05-29 06:19:39.000-07:00 - admin: Set Boot Options
+2019-05-29 06:19:39.000-07:00 - admin: Set Boot Options
+2019-05-29 06:19:39.000-07:00 - admin: Performed Reset
+2019-05-29 06:25:11.000-07:00 - admin: KVM Session Ended
+2019-06-07 03:34:22.000-07:00 - $$OsAdmin: ACL Access with Invalid Credentials
+2019-06-07 03:38:49.000-07:00 - admin: KVM Session Started
+2019-06-07 03:39:03.000-07:00 - admin: Set Boot Options
+2019-06-07 03:39:03.000-07:00 - admin: Set Boot Options
+2019-06-07 03:39:04.000-07:00 - admin: Performed Reset
+2019-06-07 03:40:06.000-07:00 - admin: KVM Session Ended
+2019-06-07 05:08:57.000-07:00 - admin: KVM Session Started
+2019-06-07 05:09:08.000-07:00 - admin: Set Boot Options
+2019-06-07 05:09:08.000-07:00 - admin: Set Boot Options
+2019-06-07 05:09:08.000-07:00 - admin: Performed Reset
+2019-06-07 05:09:43.000-07:00 - admin: KVM Session Ended
+2019-06-07 05:18:01.000-07:00 - admin: KVM Session Started
+2019-06-07 05:18:38.000-07:00 - admin: Set Boot Options
+2019-06-07 05:18:38.000-07:00 - admin: Set Boot Options
+2019-06-07 05:18:38.000-07:00 - admin: Performed Reset
+2019-06-07 05:20:09.000-07:00 - admin: KVM Session Ended
+2019-06-07 05:40:54.000-07:00 - admin: Set Boot Options
+2019-06-07 05:40:54.000-07:00 - admin: Set Boot Options
+2019-06-07 05:40:54.000-07:00 - admin: Performed Reset
+2019-06-07 05:41:04.000-07:00 - admin: KVM Session Started
+2019-06-07 05:42:58.000-07:00 - admin: KVM Session Ended
+2019-06-07 05:42:58.000-07:00 - admin: KVM Session Started
+2019-06-07 05:43:24.000-07:00 - admin: KVM Session Ended
+2019-06-07 05:43:24.000-07:00 - admin: KVM Session Started
+2019-06-07 05:43:44.000-07:00 - admin: KVM Session Ended
+2019-06-07 05:43:44.000-07:00 - admin: KVM Session Started
+2019-06-07 05:43:59.000-07:00 - admin: KVM Session Ended
+2019-06-11 22:55:45.000-07:00 - admin: KVM Session Started
+2019-06-11 22:56:06.000-07:00 - admin: Set Boot Options
+2019-06-11 22:56:06.000-07:00 - admin: Set Boot Options
+2019-06-11 22:56:06.000-07:00 - admin: Performed Reset
+2019-06-11 22:56:59.000-07:00 - admin: KVM Session Ended
+2019-06-11 22:56:59.000-07:00 - admin: Set Boot Options
+2019-06-11 22:56:59.000-07:00 - admin: Set Boot Options
+2019-06-11 22:56:59.000-07:00 - admin: Performed Power Down
+2019-06-11 22:57:39.000-07:00 - admin: Set Boot Options
+2019-06-11 22:57:40.000-07:00 - admin: Set Boot Options
+2019-06-11 22:57:40.000-07:00 - admin: Performed Power Up
+2019-06-11 22:58:13.000-07:00 - admin: SoL Session Opened
+2019-06-11 22:59:18.000-07:00 - Local: SoL Session Closed
+2019-06-19 06:31:48.000-07:00 - admin: Set Boot Options
+2019-06-19 06:31:48.000-07:00 - admin: Set Boot Options
+2019-06-19 06:31:48.000-07:00 - admin: Performed Power Down

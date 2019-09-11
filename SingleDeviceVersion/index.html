@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Utilization</title>
+<style>
+
+body {
+  font-family: 		sans-serif;
+/*  width: 960px;
+  height: 500px;
+*/  /*position: relative;*/
+}
+
+svg {
+	width: 			100%;
+	height: 		100%;
+}
+
+path.pieSlice{
+	stroke-width:	2px;
+}
+
+polyline{
+	opacity: 		.3;
+	stroke: 		black;
+	stroke-width: 	2px;
+	fill: 			none;
+}
+
+.axis path, .axis line {
+  fill: 			none;
+  stroke: 			#000;
+  shape-rendering: 	crispEdges;
+}
+
+.x.axis path {
+  display: 			none;
+}
+
+#inputArea{
+	padding: 25px;
+}
+
+</style>
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+</head>
+
+<body>
+	<div id="inputArea">
+		<input type="file" id="logFiles" name="logs[]" multiple />
+		<select id="logList"></select>
+		<button type="button" id="generateBtn">Generate</button>
+		<!-- <pre id="outputArea"></pre> -->
+	</div>
+
+	<script>
+    	let logs;
+		//Select files and append to dropdown menu
+		function selectLogs(e) {
+
+			logs = e.target.files;
+			// console.log(logs);
+
+			let logNameArr = [];
+			let selectMenu = document.getElementById('logList');
+
+			//Get filenames of the files selected
+			for (let i = 0, f; f = logs[i]; i++) {
+			  logNameArr.push(f.name);
+			}
+
+			//Sort mixed lower and upper case letters of filenames
+			logNameArr.sort((a, b) => {
+				return a.toLowerCase().localeCompare(b.toLowerCase());
+			});
+
+			//Append the sorted logs to the select menu
+			logNameArr.forEach(log => {
+			    let tmpOption = document.createElement('option');
+			    tmpOption.value = log;
+			    tmpOption.innerText = log;
+
+			    selectMenu.appendChild(tmpOption);
+			});
+		}
+
+		//Count frequency of array elements
+		function countArray(array){
+			let countObj = {};
+
+			for(let i = 0; i < array.length; i++){
+				let element = array[i];
+				countObj[element] = countObj[element] ? countObj[element] + 1 : 1;
+			}
+			// console.log(countObj);
+			return countObj;
+		}
+
+	  //Define Pie Chart SVG base elements and dimensions ---------------------------
+
+		let pieWidth = 960,
+		    pieHeight = 375,
+			radius = Math.min(pieWidth, pieHeight) / 2;
+
+		let pieSVG = d3.select("body")
+			.append("svg")
+				.attr('width', pieWidth)
+				.attr('height', pieHeight)
+			.append("g")
+
+		pieSVG.append("g")
+			.attr("class", "pieSlices");
+		pieSVG.append("g")
+			.attr("class", "labels");
+		pieSVG.append("g")
+			.attr("class", "lines");
+
+		pieSVG.attr("transform", "translate(" + pieWidth / 2 + "," + pieHeight / 2 + ")");
+
+		let pieColor = d3.scale.category20c();
+
+	  //Define Bar Chart SVG base elements and dimensions ---------------------------
+
+		let margin = {top: 20, right: 20, bottom: 30, left: 40},
+    		barWidth = 960 - margin.left - margin.right,
+    		barHeight = 400 - margin.top - margin.bottom;
+
+		let x0 = d3.scale.ordinal()
+		    .rangeRoundBands([0, barWidth], .1);
+
+		let x1 = d3.scale.ordinal();
+
+		let y = d3.scale.linear()
+		    .range([barHeight, 0]);
+
+		let xAxis = d3.svg.axis()
+		    .scale(x0)
+		    .tickSize(0)
+		    .orient("bottom");
+
+		let yAxis = d3.svg.axis()
+		    .scale(y)
+		    .orient("left");
+
+		let barColor = d3.scale.ordinal()
+		    .range(["#ca0020","#f4a582","#d5d5d5","#92c5de","#0571b0"]);
+
+		let barSVG = d3.select('body').append("svg")
+		    .attr("width", barWidth + margin.left + margin.right)
+		    .attr("height", barHeight + margin.top + margin.bottom)
+		  .append("g")
+		    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+		function updatePie(data) {
+			let pie = d3.layout.pie()
+				.sort(null)
+				.value(function(d) {
+					return d.value;
+				});
+      		let data_ready = pie(d3.entries(data))
+
+			let arc = d3.svg.arc()
+				.outerRadius(radius * 0.8)
+				.innerRadius(radius * 0.4);
+
+			let outerArc = d3.svg.arc()
+				.innerRadius(radius * 0.9)
+				.outerRadius(radius * 0.9);
+
+
+			// ------- PIE SLICES -------
+			let pieSlice = pieSVG.select(".pieSlices").selectAll("path.pieSlice")
+				.data(data_ready);
+
+			pieSlice.enter()
+				.insert("path")
+				.style("fill", function(d) { return pieColor(d.data.key); })
+				.attr("class", "pieSlice");
+
+			pieSlice		
+				.transition().duration(1000)
+				.attrTween("d", function(d) {
+					this._current = this._current || d;
+					let interpolate = d3.interpolate(this._current, d);
+					this._current = interpolate(0);
+					return function(t) {
+						return arc(interpolate(t));
+					};
+				})
+
+			pieSlice.exit()
+				.remove();
+
+			// ------- TEXT LABELS -------
+			pieSVG.select(".labels").selectAll("text").remove();
+
+			let text = pieSVG.select(".labels").selectAll("text")
+				.data(data_ready);
+
+
+			text.enter()
+				.append("text")
+				.attr("dy", ".35em")
+				.text(function(d) {
+					return d.data.key + ": " + d.value;
+				});
+			
+			function midAngle(d){
+				return d.startAngle + (d.endAngle - d.startAngle)/2;
+			}
+
+			text.transition().duration(1000)
+				.attrTween("transform", function(d) {
+					this._current = this._current || d;
+					let interpolate = d3.interpolate(this._current, d);
+					this._current = interpolate(0);
+					return function(t) {
+						let d2 = interpolate(t);
+						let pos = outerArc.centroid(d2);
+						pos[0] = radius * (midAngle(d2) < Math.PI ? 1 : -1);
+						return "translate("+ pos +")";
+					};
+				})
+				.styleTween("text-anchor", function(d){
+					this._current = this._current || d;
+					let interpolate = d3.interpolate(this._current, d);
+					this._current = interpolate(0);
+					return function(t) {
+						let d2 = interpolate(t);
+						return midAngle(d2) < Math.PI ? "start":"end";
+					};
+				});
+
+			text.exit()
+				.remove();
+
+
+			// ------- SLICE TO TEXT POLYLINES -------
+
+			let polyline = pieSVG.select(".lines").selectAll("polyline")
+				.data(data_ready);
+			
+			polyline.enter()
+				.append("polyline");
+
+			polyline.transition().duration(1000)
+				.attrTween("points", function(d){
+					this._current = this._current || d;
+					let interpolate = d3.interpolate(this._current, d);
+					this._current = interpolate(0);
+					return function(t) {
+						let d2 = interpolate(t);
+						let pos = outerArc.centroid(d2);
+						pos[0] = radius * 0.95 * (midAngle(d2) < Math.PI ? 1 : -1);
+						return [arc.centroid(d2), outerArc.centroid(d2), pos];
+					};			
+				});
+			
+			polyline.exit()
+				.remove();
+		};
+
+		function makeChart(data) {
+
+		  //force redraw bars and y axis every time
+		  barSVG.selectAll('.bars').remove();
+		  barSVG.selectAll('.y').remove();
+
+
+		  let categoriesNames = data.map(function(d) { return d.categorie; });
+		  // let rateNames = data[0].values.map(function(d) { console.log(d.key); return d.key; });
+		  let rateNames = ['KVM Session Started', 'Performed Reset', 'Performed Power Down', 'Performed Power Up', 'SoL Session Opened'];
+
+
+		  x0.domain(categoriesNames);
+		  x1.domain(rateNames).rangeRoundBands([0, x0.rangeBand()]);
+		  y.domain([0, d3.max(data, function(categorie) { return d3.max(categorie.values, function(d) { return d.value; }); })]);
+
+		  barSVG.append("g")
+		      .attr("class", "x axis")
+		      .attr("transform", "translate(0," + barHeight + ")")
+		      .call(xAxis);
+
+		  barSVG.append("g")
+		      .attr("class", "y axis")
+		      .style('opacity','0')
+		      .call(yAxis)
+		  .append("text")
+		      .attr("transform", "rotate(-90)")
+		      .attr("y", 6)
+		      .attr("dy", ".71em")
+		      .style("text-anchor", "end")
+		      .style('font-weight','bold')
+		      .text("Value");
+
+		  barSVG.select('.y').transition().duration(500).delay(1300).style('opacity','1');
+
+		  let barSlice = barSVG.selectAll(".barSlice")
+		      .data(data)
+		      .enter().append("g")
+		      .attr("class", "g")
+		      .attr("transform",function(d) { return "translate(" + x0(d.categorie) + ",0)"; });
+
+		  barSlice.selectAll("rect")
+		      .data(function(d) { return d.values; })
+		  .enter().append("rect")
+		      .attr("width", x1.rangeBand())
+		      .attr("x", function(d) { return x1(d.key); })
+		      .style("fill", function(d) { return barColor(d.key) })
+		      .attr("y", function(d) { return y(0); })
+		      .attr("height", function(d) { return barHeight - y(0); })
+		      .on("mouseover", function(d) {
+		          d3.select(this).style("fill", d3.rgb(barColor(d.key)).darker(2));
+		      })
+		      .on("mouseout", function(d) {
+		          d3.select(this).style("fill", barColor(d.key));
+		      });
+
+		  barSlice.selectAll("rect")
+		      .transition()
+		      .delay(function (d) {return Math.random()*1000;})
+		      .duration(1000)
+		      .attr("y", function(d) { return y(d.value); })
+		      .attr("height", function(d) { return barHeight - y(d.value); })
+		      .attr('class', 'bars');
+
+		  //Legend
+		  let legend = barSVG.selectAll(".legend")
+		      .data(rateNames.reverse())
+		  .enter().append("g")
+		      .attr("class", "legend")
+		      .attr("transform", function(d,i) { return "translate(0," + i * 20 + ")"; })
+		      .style("opacity","0");
+
+		  legend.append("rect")
+		      .attr("x", barWidth - 18)
+		      .attr("width", 18)
+		      .attr("height", 18)
+		      .style("fill", function(d) { return barColor(d); });
+
+		  legend.append("text")
+		      .attr("x", barWidth - 24)
+		      .attr("y", 9)
+		      .attr("dy", ".35em")
+		      .style("text-anchor", "end")
+		      .text(function(d) { return d; });
+
+		  legend.transition().duration(500).delay(function(d,i){ return 1300 + 100 * i; }).style("opacity","1");
+		};
+
+		//Shrink data arrays down to last X months
+    function lastXMonths(array, numMonths){
+    	let counter = numMonths - 1;
+    	let prevMonthArr = [];
+    	let currentMonth = new Date().getMonth();
+
+    	while(counter > -1){
+
+    		if(currentMonth === -1)
+    			currentMonth = 12
+
+    		prevMonthArr[counter] = array[currentMonth];
+    		counter--;
+    		currentMonth--;
+    	}
+    	return prevMonthArr;
+    }
+
+	function readFile(e){
+
+		let selectedOptionVal = document.getElementById('logList').value;
+
+		let selectedFile;
+		let reader = new FileReader();
+
+
+		//Treat logs as an array and iterate over it
+	  	[].forEach.call(logs, file =>{
+	  		if(selectedOptionVal === file.name){
+	  			selectedFile = file;
+	  		}
+	  	});
+
+		reader.onload = function(e) {
+
+  	    	let eventArr = [];
+			let eventTotals = {};
+		    let jsonObj = JSON.parse(e.target.result);
+		    let reqEventsArr = ['KVM Session Started', 'Performed Power Down', 
+					'Performed Power Up', 'Performed Reset', 
+					'SoL Session Opened'];
+			let months = ['Jan', 'Feb','Mar','Apr','May','Jun','Jul',
+					'Aug','Sep','Oct','Nov','Dec'];
+			let monthArr = [];
+
+				//Set default values for empty chart data
+			for( let i = 0; i < 12; i++){
+				monthArr[i] = { values: [] };
+				monthArr[i].categorie = months[i];
+			}
+				//Sort data into arrays for charts
+		   	jsonObj.auditevents.forEach(logEvent => {
+
+		    	if(reqEventsArr.indexOf(logEvent.Event) > -1){
+		    		eventArr.push(logEvent.Event);
+
+		    		//Convert to Date object, find month
+		    		let tmpDate = new Date(logEvent.Time);
+		    		let monthIndex = tmpDate.getMonth();
+
+		    		//Find name of month
+	    			let monthName = tmpDate.toLocaleString('default', { month: 'long'});
+
+	    			monthArr[monthIndex].categorie = monthName;
+		    		monthArr[monthIndex].values.push(logEvent.Event);
+					}
+		    });
+
+		    //Convert data format to push to work with bar chart
+		    monthArr.forEach(month => {
+
+		    	let countedEventArr= countArray(month.values);
+
+		    	//Transpose from (key,value) to (key:data,value:data);
+			    let convertedDataFormat = Object.entries(countedEventArr).map(([key, value]) => ({key, value}));
+
+		    	month.values = convertedDataFormat;
+
+		    });		    
+
+
+		    let lastSixMonthArr = lastXMonths(monthArr, 6);
+	    	eventTotals = countArray(eventArr);
+
+	    	//Update the graph
+	    	makeChart(lastSixMonthArr);
+		    updatePie(eventTotals);
+
+		    //Print the JSON thats read for testing
+		    // document.getElementById('outputArea').textContent = JSON.stringify(jsonObj, null, 2);
+		  }
+		  reader.readAsText(selectedFile);
+	  }
+
+	  //Wire events
+	  document.getElementById('logFiles').addEventListener('change', selectLogs, false);
+	  document.getElementById('generateBtn').addEventListener('click', readFile,false);
+
+	</script>
+</body>
+</html>

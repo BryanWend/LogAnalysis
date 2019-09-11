@@ -1,0 +1,209 @@
+{
+  "webappversion": "0.0.0",
+  "description": "Audit Log",
+  "hostname": "Device2",
+  "localtime": "Tue Jan 01 2019 00:00:00 GMT-0700 (Pacific Daylight Time)",
+  "utctime": "Tue, 01 Jan 2019 07:00:00 GMT",
+  "isotime": "2019-01-01T00:00:00.961Z",
+  "systemid": "b53nmre4-fg34-kjh5-b245-9dfl234mnde2",
+  "auditevents": [
+    {
+      "AuditAppID": 21,
+      "EventID": 0,
+      "InitiatorType": 0,
+      "AuditApp": "Network Time",
+      "Event": "Intel&reg; ME Time Set",
+      "Initiator": "$$OsAdmin",
+      "Time": "2004-01-01T08:17:34.000Z",
+      "MCLocationType": 0,
+      "NetAddress": "127.0.0.1"
+    },
+    {
+      "AuditAppID": 21,
+      "EventID": 0,
+      "InitiatorType": 0,
+      "AuditApp": "Network Time",
+      "Event": "Intel&reg; ME Time Set",
+      "Initiator": "$$OsAdmin",
+      "Time": "2018-06-20T07:49:01.000Z",
+      "MCLocationType": 0,
+      "NetAddress": "127.0.0.1"
+    },
+    {
+      "AuditAppID": 21,
+      "EventID": 0,
+      "InitiatorType": 0,
+      "AuditApp": "Network Time",
+      "Event": "Intel&reg; ME Time Set",
+      "Initiator": "$$OsAdmin",
+      "Time": "2019-05-24T01:24:43.000Z",
+      "MCLocationType": 0,
+      "NetAddress": "127.0.0.1"
+    },
+    {
+      "AuditAppID": 16,
+      "EventID": 0,
+      "InitiatorType": 2,
+      "AuditApp": "Security Admin",
+      "Event": "Provisioning Started",
+      "Initiator": "<i>Local</i>",
+      "Time": "2019-05-24T16:28:34.000Z",
+      "MCLocationType": 2,
+      "NetAddress": ""
+    },
+    {
+      "AuditAppID": 30,
+      "EventID": 0,
+      "InitiatorType": 2,
+      "AuditApp": "User Opt-In Events",
+      "Event": "Opt-In Policy Change",
+      "Initiator": "<i>Local</i>",
+      "Time": "2019-05-24T16:28:49.000Z",
+      "MCLocationType": 2,
+      "NetAddress": ""
+    },
+    {
+      "AuditAppID": 18,
+      "EventID": 10,
+      "InitiatorType": 0,
+      "AuditApp": "Redirection Manager",
+      "Event": "KVM Enabled",
+      "Initiator": "admin",
+      "Time": "2019-05-24T16:37:09.000Z",
+      "MCLocationType": 0,
+      "NetAddress": "127.0.0.1"
+    },
+    {
+      "AuditAppID": 18,
+      "EventID": 8,
+      "InitiatorType": 0,
+      "AuditApp": "Redirection Manager",
+      "Event": "KVM Session Started",
+      "Initiator": "admin",
+      "Time": "2019-05-24T16:37:27.000Z",
+      "MCLocationType": 0,
+      "NetAddress": "127.0.0.1"
+    },
+    {
+      "AuditAppID": 18,
+      "EventID": 9,
+      "InitiatorType": 0,
+      "AuditApp": "Redirection Manager",
+      "Event": "KVM Session Ended",
+      "Initiator": "admin",
+      "Time": "2019-05-24T16:41:04.000Z",
+      "MCLocationType": 0,
+      "NetAddress": "127.0.0.1"
+    },
+    {
+      "AuditAppID": 17,
+      "EventID": 4,
+      "InitiatorType": 0,
+      "AuditApp": "RCO",
+      "Event": "Set Boot Options",
+      "Initiator": "admin",
+      "Time": "2019-05-24T16:41:04.000Z",
+      "MCLocationType": 0,
+      "NetAddress": "127.0.0.1"
+    },
+    {
+      "AuditAppID": 17,
+      "EventID": 4,
+      "InitiatorType": 0,
+      "AuditApp": "RCO",
+      "Event": "Set Boot Options",
+      "Initiator": "admin",
+      "Time": "2019-05-24T16:41:05.000Z",
+      "MCLocationType": 0,
+      "NetAddress": "127.0.0.1"
+    },
+    {
+      "AuditAppID": 17,
+      "EventID": 1,
+      "InitiatorType": 0,
+      "AuditApp": "RCO",
+      "Event": "Performed Power Down",
+      "Initiator": "admin",
+      "Time": "2019-05-24T16:41:05.000Z",
+      "MCLocationType": 0,
+      "NetAddress": "127.0.0.1"
+    },
+    {
+      "AuditAppID": 18,
+      "EventID": 8,
+      "InitiatorType": 0,
+      "AuditApp": "Redirection Manager",
+      "Event": "KVM Session Started",
+      "Initiator": "admin",
+      "Time": "2019-05-24T18:21:41.000Z",
+      "MCLocationType": 0,
+      "NetAddress": "127.0.0.1"
+    },
+    {
+      "AuditAppID": 18,
+      "EventID": 9,
+      "InitiatorType": 0,
+      "AuditApp": "Redirection Manager",
+      "Event": "KVM Session Ended",
+      "Initiator": "admin",
+      "Time": "2019-05-24T18:21:46.000Z",
+      "MCLocationType": 0,
+      "NetAddress": "127.0.0.1"
+    },
+    {
+      "AuditAppID": 18,
+      "EventID": 4,
+      "InitiatorType": 0,
+      "AuditApp": "Redirection Manager",
+      "Event": "SoL Session Opened",
+      "Initiator": "admin",
+      "Time": "2019-06-19T21:24:23.000Z",
+      "MCLocationType": 0,
+      "NetAddress": "127.0.0.1"
+    },
+    {
+      "AuditAppID": 18,
+      "EventID": 5,
+      "InitiatorType": 2,
+      "AuditApp": "Redirection Manager",
+      "Event": "SoL Session Closed",
+      "Initiator": "<i>Local</i>",
+      "Time": "2019-06-19T21:24:25.000Z",
+      "MCLocationType": 0,
+      "NetAddress": "127.0.0.1"
+    },
+    {
+      "AuditAppID": 17,
+      "EventID": 4,
+      "InitiatorType": 0,
+      "AuditApp": "RCO",
+      "Event": "Set Boot Options",
+      "Initiator": "admin",
+      "Time": "2019-06-19T21:29:00.000Z",
+      "MCLocationType": 0,
+      "NetAddress": "127.0.0.1"
+    },
+    {
+      "AuditAppID": 17,
+      "EventID": 4,
+      "InitiatorType": 0,
+      "AuditApp": "RCO",
+      "Event": "Set Boot Options",
+      "Initiator": "admin",
+      "Time": "2019-06-19T21:29:00.000Z",
+      "MCLocationType": 0,
+      "NetAddress": "127.0.0.1"
+    },
+    {
+      "AuditAppID": 17,
+      "EventID": 1,
+      "InitiatorType": 0,
+      "AuditApp": "RCO",
+      "Event": "Performed Power Down",
+      "Initiator": "admin",
+      "Time": "2019-06-19T21:29:00.000Z",
+      "MCLocationType": 0,
+      "NetAddress": "127.0.0.1"
+    }
+  ]
+}

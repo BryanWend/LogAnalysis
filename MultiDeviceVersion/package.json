@@ -1,0 +1,23 @@
+{
+  "name": "amt-audit-log-script",
+  "version": "1.0.0",
+  "description": "Take MeshCMD audit log output and store in a MongoDB database",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "meshcmd",
+    "amt",
+    "node",
+    "mongodb",
+    "mongoose"
+  ],
+  "author": "Bryan Wendlandt",
+  "license": "ISC",
+  "dependencies": {
+    "d3": "^5.9.2",
+    "jsdom": "^15.1.1",
+    "mongoose": "^5.5.14"
+  }
+}
